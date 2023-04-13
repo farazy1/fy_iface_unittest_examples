@@ -12,7 +12,7 @@ import (
 var svc snsiface.SNSAPI
 
 func main() {
-	sess := session.New()
+	sess := session.Must(session.NewSessionWithOptions(session.Options{}))
 	if svc == nil {
 		fmt.Println("svc is nil in global, initializing")
 		svc = sns.New(sess)
