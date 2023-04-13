@@ -8,7 +8,7 @@ import (
 )
 
 func TestMyFunc(t *testing.T) {
-	sess := session.New()
+	sess := session.Must(session.NewSessionWithOptions(session.Options{}))
 	svc = sns.New(sess)
 
 	main()
